@@ -20,7 +20,11 @@ puerto = 1337
 print(datetime.now(), '\033[0;32m [INFO] Definiendo host remoto y puerto \033[0;0m')
 
 try:
-    usuario = input("Usuario: ")
+    while(True):        
+        usuario = input("Usuario: ")
+        if usuario != '':
+            break
+        print(datetime.now(), '\033[0;91m [INFO] El usuario es un campo obligatorio \033[0;0m')
     for password in open("100passwords.txt").read().split():
         while(True):
             print(datetime.now(), '\033[0;32m [INFO] Estableciendo conexion TCP/IP \033[0;0m')
