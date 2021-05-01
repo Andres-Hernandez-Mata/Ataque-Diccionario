@@ -10,6 +10,8 @@ import socket
 import os
 import hashlib
 
+os.system("cls")
+
 users = {
     "admin": "8621ffdbc5698829397d97767ac13db3",
     "scott": "5f4dcc3b5aa765d61d8327deb882cf99", 
@@ -43,7 +45,7 @@ while(True):
         print(f"Usuario recibido: {usuario}")
 
         # envía respuesta
-        cli.send("Escriba el password:".encode())
+        cli.send("Escriba el password: ".encode())
 
         # recibe password
         password = cli.recv(1024).decode()
@@ -63,8 +65,7 @@ while(True):
                 cli.send("Ok".encode())
                 break
             else:
-                cli.send("Acceso denegado".encode())
-                cli.close()
+                cli.send("Acceso denegado".encode())                
                 break
 
 
